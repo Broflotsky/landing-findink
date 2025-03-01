@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button"
 //   CardHeader,
 //   CardTitle,
 // } from "@/components/ui/card"
-import { Instagram,  MapPin, Phone, Mail, X } from 'lucide-react'
+import { Instagram, Mail, X } from 'lucide-react'
 
 export function ContactSection() {
   return (
