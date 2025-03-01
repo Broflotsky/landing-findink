@@ -60,7 +60,7 @@ export function ProcessSection() {
             >
               <CardContent className="flex items-start gap-4 p-6">
                 <div className="rounded-lg bg-primary/10 p-2 text-primary">
-                  <step.icon className="h-6 w-6" />
+                  <step.icon className="h-6 w-6 text-teal-500" />
                 </div>
                 <div>
                   <h3 className="font-semibold text-white">{step.title}</h3>

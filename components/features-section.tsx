@@ -11,39 +11,39 @@ interface Feature {
 const features = {
   artists: [
     {
-      title: "Muestra Tu Arte",
+      title: "Muestra tu arte",
       description: "Crea un impresionante portafolio para mostrar tus mejores trabajos",
       icon: Palette,
     },
     {
-      title: "Gestiona Reservas",
+      title: "Gestiona reservas",
       description: "Maneja tu agenda y citas sin esfuerzo",
       icon: Calendar,
     },
     {
-      title: "Pagos Seguros",
+      title: "Pagos seguros",
       description: "Recibe pagos de forma segura y fácil",
       icon: Shield,
     },
     {
-      title: "Aumenta Tu Audiencia",
+      title: "Aumenta tu audiencia",
       description: "Incrementa tu visibilidad y atrae nuevos clientes",
       icon: Users,
     },
   ],
   clients: [
     {
-      title: "Encuentra Tu Artista Ideal",
+      title: "Encuentra tu artista ideal",
       description: "Explora portafolios y encuentra al artista perfecto para tu tatuaje",
       icon: Search,
     },
     {
-      title: "Reserva Fácilmente",
+      title: "Reserva facilmente",
       description: "Agenda citas con tus artistas favoritos sin complicaciones",
       icon: BookCheck,
     },
     {
-      title: "Lee y Escribe Reseñas",
+      title: "Lee y escribe reseñas",
       description: "Comparte tus experiencias y lee las opiniones de otros",
       icon: Star,
     },
@@ -87,8 +87,8 @@ export function FeaturesSection() {
         </h2>
         <Tabs defaultValue="artistas" className="w-full max-w-3xl mx-auto">
           <TabsList className="grid w-full grid-cols-2">
-            <TabsTrigger value="artistas">Para Artistas</TabsTrigger>
-            <TabsTrigger value="clientes">Para Clientes</TabsTrigger>
+            <TabsTrigger value="artistas">Para artistas</TabsTrigger>
+            <TabsTrigger value="clientes">Para clientes</TabsTrigger>
           </TabsList>
           <TabsContent value="artistas" className="mt-4">
             <FeaturesGrid features={features.artists} />

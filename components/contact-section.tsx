@@ -1,14 +1,15 @@
+'use client'
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
-import { Instagram, Facebook, MapPin, Phone, Mail } from 'lucide-react'
+// import { Input } from "@/components/ui/input"
+// import { Textarea } from "@/components/ui/textarea"
+// import {
+//   Card,
+//   CardContent,
+//   CardDescription,
+//   CardHeader,
+//   CardTitle,
+// } from "@/components/ui/card"
+import { Instagram,  MapPin, Phone, Mail, X } from 'lucide-react'
 
 export function ContactSection() {
   return (
@@ -24,29 +25,29 @@ export function ContactSection() {
               siguiente paso en tu viaje artístico
             </p>
             <div className="mt-8 space-y-6">
-              <div className="flex items-center gap-4 text-gray-400">
+              {/* <div className="flex items-center gap-4 text-gray-400">
                 <MapPin className="h-5 w-5" />
                 <span>Calle Principal 123, Ciudad</span>
               </div>
               <div className="flex items-center gap-4 text-gray-400">
                 <Phone className="h-5 w-5" />
                 <span>+34 123 456 789</span>
-              </div>
+              </div> */}
               <div className="flex items-center gap-4 text-gray-400">
                 <Mail className="h-5 w-5" />
-                <span>info@inkcanvas.com</span>
+                <span>findink.co@gmail.com</span>
               </div>
             </div>
             <div className="mt-8 flex gap-4">
-              <Button variant="outline" size="icon">
+              <Button variant="outline" size="icon" onClick={() => window.open('https://www.instagram.com/findink.co/')}>
                 <Instagram className="h-5 w-5" />
               </Button>
-              <Button variant="outline" size="icon">
-                <Facebook className="h-5 w-5" />
+              <Button variant="outline" size="icon" onClick={() => window.open('https://x.com/findinkofficial')}>
+                <X className="h-5 w-5" />
               </Button>
             </div>
           </div>
-          <Card className="border-white/10 bg-white/5">
+          {/* <Card className="border-white/10 bg-white/5">
             <CardHeader>
               <CardTitle>Envíanos un mensaje</CardTitle>
               <CardDescription>
@@ -79,7 +80,7 @@ export function ContactSection() {
                 <Button className="w-full">Enviar mensaje</Button>
               </form>
             </CardContent>
-          </Card>
+          </Card> */}
         </div>
       </div>
     </section>

@@ -22,19 +22,19 @@ export function SiteHeader() {
         </Link>
 
         <nav className="hidden space-x-6 text-sm font-medium text-white/70 md:flex">
-          <Link href="/explore" className="hover:text-white">
+          <Link href="https://app.findink.co/explorer" className="hover:text-white">
             Explorar
           </Link>
-          <Link href="/blog" className="hover:text-white">
+          <Link href="https://app.findink.co/blog" className="hover:text-white">
             Blog
           </Link>
         </nav>
 
         <div className="hidden items-center space-x-4 md:flex">
-          <Button variant="ghost" className="text-white hover:text-black ">
+          <Button variant="ghost" className="text-white hover:text-black " onClick={() => window.open('https://app.findink.co/auth/login')}>
             Inicia sesión
           </Button>
-          <Button>Regístrate</Button>
+          <Button onClick={() => window.open('https://app.findink.co/auth/register')}>Regístrate</Button>
         </div>
 
         <MobileNav />
