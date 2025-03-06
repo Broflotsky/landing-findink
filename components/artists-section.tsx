@@ -30,7 +30,7 @@ interface ArtistProfile {
 
 async function getArtistProfiles() {
   
-  const res = await fetch('https://api.findink.co/api/artist-profiles?populate[locations][populate]=city&populate[profilePicture][populate]=*&fields[6]=nickName&fields[7]=slug&pagination[pageSize]=6', {
+  const res = await fetch('https://api.findink.co/api/artist-profiles?populate[locations][populate]=city&populate[profilePicture][populate]=*&fields[6]=nickName&fields[7]=slug&filters[isPro][%24eq]=true', {
     next: { revalidate: 3600 } // Revalidate every hour
   })
   
