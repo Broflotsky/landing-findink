@@ -39,7 +39,7 @@ export function GallerySection() {
   useEffect(() => {
     const fetchDesigns = async () => {
       try {
-        const res = await fetch('https://api.findink.co/api/designs?populate[image][populate]=*&populate[artist_profile_designs][populate]=locations&sort=createdAt%3Adesc')
+        const res = await fetch('https://api.findink.co/api/designs?populate[image][populate]=*&populate[artist_profile_designs][populate]=locations&sort=createdAt%3Adesc&pagination[limit]=6')
         
         if (!res.ok) {
           throw new Error('Failed to fetch designs')
