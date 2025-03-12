@@ -4,6 +4,7 @@ import Image from "next/image"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
+import { useEffect, useState } from "react"
 
 interface ArtistProfile {
   id: number
@@ -28,23 +29,40 @@ interface ArtistProfile {
   }
 }
 
-async function getArtistProfiles() {
-  
-  const res = await fetch('https://api.findink.co/api/artist-profiles?populate[locations][populate]=city&populate[profilePicture][populate]=*&fields[6]=nickName&fields[7]=slug&filters[isPro][%24eq]=true', {
-    next: { revalidate: 3600 } // Revalidate every hour
-  })
-  
-  if (!res.ok) {
-    throw new Error('Failed to fetch artist profiles')
-  }
-  
-  const data = await res.json()
-  return data.data as ArtistProfile[]
-}
+export function ArtistsSection() {
+  const [artists, setArtists] = useState<ArtistProfile[]>([])
+  const [isLoading, setIsLoading] = useState(true)
 
-export async function ArtistsSection() {
-  
-  const artists = await getArtistProfiles()
+  useEffect(() => {
+    const fetchArtistProfiles = async () => {
+      try {
+        const res = await fetch('https://api.findink.co/api/artist-profiles?populate[locations][populate]=city&populate[profilePicture][populate]=*&fields[6]=nickName&fields[7]=slug&filters[isPro][%24eq]=true')
+        
+        if (!res.ok) {
+          throw new Error('Failed to fetch artist profiles')
+        }
+        
+        const data = await res.json()
+        setArtists(data.data)
+      } catch (error) {
+        console.error('Error fetching artist profiles:', error)
+      } finally {
+        setIsLoading(false)
+      }
+    }
+
+    fetchArtistProfiles()
+  }, [])
+
+  if (isLoading) {
+    return (
+      <section id="artists" className="bg-black py-24 flex justify-center items-center">
+        <div className="container px-4 text-center text-white">
+          Cargando artistas...
+        </div>
+      </section>
+    )
+  }
 
   return (
     <section id="artists" className="bg-black py-24 flex justify-center items-center">
